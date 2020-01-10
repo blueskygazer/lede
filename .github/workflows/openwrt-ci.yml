@@ -7,7 +7,7 @@
 # <https://github.com/KFERMercer/OpenWrt-CI>
 #
 
-name: Raspberry Pi
+name: x86_x64 软路由
 
 on:
   push:
@@ -101,12 +101,9 @@ jobs:
 
           # 编译x64(被注释)和树莓派3固件:
           cat >> .config <<EOF
-          # CONFIG_TARGET_x86=y
-          # CONFIG_TARGET_x86_64=y
-          # CONFIG_TARGET_x86_64_Generic=y
-          CONFIG_TARGET_bcm2708=y
-          CONFIG_TARGET_bcm2708_bcm2710=y
-          CONFIG_TARGET_bcm2708_bcm2710_DEVICE_rpi-3=y
+          CONFIG_TARGET_x86=y
+          CONFIG_TARGET_x86_64=y
+          CONFIG_TARGET_x86_64_Generic=y
           EOF
 
           # 固件压缩:
